@@ -11,7 +11,7 @@ app.get('/healthcheck', (req, res)=>{
         res.status(200).send({"code": 2000, "msg": "Local Mode: Healthcheck is success!"})
 })
 app.get('/',(req,res)=>{
-    res.end("hello node");
+    res.end("hello node ...");
 })
 
 
