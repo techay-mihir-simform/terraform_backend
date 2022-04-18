@@ -1,5 +1,5 @@
-[
-    {
+{
+  "containerDefinitions": [{
       "name": "pink-slon",
       "image": "133631580572.dkr.ecr.us-east-1.amazonaws.com/repoforecr:latest",
       "cpu": 10,
@@ -12,4 +12,8 @@
         }
       ]
     }
-]
+  ],
+  "family": "web-family",
+  "networkMode": "bridge"
+
+}
