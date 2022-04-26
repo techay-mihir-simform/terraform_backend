@@ -1,7 +1,7 @@
 resource "aws_autoscaling_group" "example" {
   availability_zones = ["us-east-1a"]
-  desired_capacity   = 2
-  max_size           = 2
+  desired_capacity   = 1
+  max_size           = 1
   min_size           = 1
 
   launch_template {
@@ -18,7 +18,7 @@ resource "aws_autoscaling_group" "example" {
   lifecycle {
     create_before_destroy = true
   }
-  #target_group_arns = ["${aws_lb_target_group.tcw_tg.arn}"]
+  target_group_arns = ["${aws_lb_target_group.tcw_tg.arn}"]
 
 }
 
@@ -68,7 +68,7 @@ resource "aws_launch_template" "example" {
   iam_instance_profile{
     arn=aws_iam_instance_profile.ecs_agent.arn
   }
-  key_name="my_key"
+  key_name="second_key"
   user_data = base64encode("#!/bin/bash\necho ECS_CLUSTER=${var.cluster_name} >> /etc/ecs/ecs.config")
    #vpc_security_group_ids = ["${aws_security_group.sg.id}"]
    network_interfaces {
