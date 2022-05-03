@@ -52,6 +52,7 @@ resource "aws_lb_target_group" "tcw_tg" {
     timeout             = 5
     healthy_threshold   = 5
     unhealthy_threshold = 2
+     matcher             = "200-499"
   }
 name = "tcw-tg"
 port = 80
