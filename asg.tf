@@ -68,7 +68,7 @@ resource "aws_launch_template" "example" {
   iam_instance_profile{
     arn=aws_iam_instance_profile.ecs_agent.arn
   }
-  key_name="second_key"
+  key_name="my_key"
   user_data = base64encode("#!/bin/bash\necho ECS_CLUSTER=${var.cluster_name} >> /etc/ecs/ecs.config")
    #vpc_security_group_ids = ["${aws_security_group.sg.id}"]
    network_interfaces {
